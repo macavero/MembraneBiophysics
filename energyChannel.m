@@ -11,11 +11,11 @@ R = 8.314; %J/(mol.K)
 
 if nargin<2
     gibbsFree = 0:0.1:10000;
-    alphaVal = (K*T / h)* exp(gibbsFree/(R*T));
+    alphaVal = (K*T / h)* exp(-gibbsFree/(R*T));
     alpha = plot(gibbsFree,alphaVal);
     xlabel('Gibbs Free Energy');
     ylabel('Alpha');
 else
-    alpha = (K*T / h)* exp(gibbsFree/(R*T));
+    alpha = (K*T / h)* exp(-gibbsFree/(R*T));
 end
 
